@@ -6,30 +6,34 @@ namespace Module10
     {
         static void Main()
         {
+            var user = new User();
+            var account = new Account();
+
+            IUpdater<Account> updater = new UserService();
+
+            var userService = new UserService();
+            userService.Update(user);
             Console.ReadKey();
         }
     }
-    public interface IBook
+    public class User
     {
-        void Read();
+
     }
 
-    public interface IDevice
+    public class Account : User
     {
-        void TurnOn();
-        void TurnOff();
+
     }
-    public class ElectronicBook : IBook, IDevice
+
+    public interface IUpdater<in User>
     {
-        void IBook.Read()
-        {
+        void Update(User entity);
+    }
 
-        }
-        void IDevice.TurnOn()
-        {
-
-        }
-        void IDevice.TurnOff()
+    public class UserService : IUpdater<User>
+    {
+        public void Update(User entity)
         {
 
         }
