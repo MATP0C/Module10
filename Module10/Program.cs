@@ -9,31 +9,31 @@ namespace Module10
             Console.ReadKey();
         }
     }
-    public interface IWriter
+    public interface ICreatable
     {
-        void Write();
+        void Create();
     }
 
-    public interface IReader
+    public interface IDeletable
     {
-        void Read();
+        void Delete();
     }
 
-    public interface IMailer
+    public interface IUpdatable
     {
-        void SendEmail();
+        void Update();
     }
-    public class FileManager : IWriter, IReader, IMailer
-    {
-        void IWriter.Write()
+    public class Entity : ICreatable, IDeletable, IUpdatable 
+    { 
+        public void Create()
         {
 
         }
-        void IReader.Read()
+        public void Delete()
         {
 
         }
-        void IMailer.SendEmail()
+        public void Update()
         {
 
         }
