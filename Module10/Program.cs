@@ -6,46 +6,18 @@ namespace Module10
     {
         static void Main(string[] args)
         {
-
+            Writer writer = new Writer();
+            ((IWriter)writer).Write();
+            Console.ReadKey();
         }
     }
-    public interface IManager
+    public interface IWriter
     {
-        void Create()
-        {
-
-        }
-        void Read()
-        {
-
-        }
-        void Update()
-        {
-
-        }
-        void Delete()
-        {
-
-        }
+        void Write();
     }
-    public class Manager : IManager
+    public class Writer : IWriter 
     {
-        public void Create()
-        {
-
-        }
-
-        public void Read()
-        {
-
-        }
-
-        public void Update()
-        {
-
-        }
-
-        public void Delete()
+        void IWriter.Write()
         {
 
         }
