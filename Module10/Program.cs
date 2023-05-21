@@ -6,6 +6,8 @@ namespace Module10
     {
         static void Main(string[] args)
         {
+            var worker = new Worker();
+            ((IWorker)worker).Build();
             Console.ReadKey();
         }
     }
@@ -15,7 +17,7 @@ namespace Module10
     }
     public class Worker : IWorker
     {
-        public void Build()
+        void IWorker.Build()
         {
 
         }
