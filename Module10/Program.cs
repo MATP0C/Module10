@@ -4,20 +4,36 @@ namespace Module10
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            var worker = new Worker();
-            ((IWorker)worker).Build();
             Console.ReadKey();
         }
     }
-    public interface IWorker
+    public interface IWriter
     {
-        public void Build();
+        void Write();
     }
-    public class Worker : IWorker
+
+    public interface IReader
     {
-        void IWorker.Build()
+        void Read();
+    }
+
+    public interface IMailer
+    {
+        void SendEmail();
+    }
+    public class FileManager : IWriter, IReader, IMailer
+    {
+        void IWriter.Write()
+        {
+
+        }
+        void IReader.Read()
+        {
+
+        }
+        void IMailer.SendEmail()
         {
 
         }
