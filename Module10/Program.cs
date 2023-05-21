@@ -6,6 +6,7 @@ namespace Module10
     {
         static void Main(string[] args)
         {
+
         }
     }
     public interface IManager
